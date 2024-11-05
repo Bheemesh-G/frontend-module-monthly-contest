@@ -24,28 +24,43 @@ function successMessage()
 
 function getErrorMessage()
 {
-    if(Name.value.trim()==='' && Profession.value.trim()==='' && Age.value==='')
-        {
-          errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
-          errorMessage.style.color="red";
-        }
-        else if(Name.value.trim()==='' && Profession.value.trim()!=='' && Age.value!==''){
-            errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
-            errorMessage.style.color="red";
-        }
-        else if(Name.value.trim()!=='' && Profession.value.trim()==='' && Age.value!=='')
-        {
-            errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
-            errorMessage.style.color="red";
-        }
-        else if(Name.value.trim()!=='' && Profession.value.trim()!=='' && Age.value==='')
-        {
-            errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
-            errorMessage.style.color="red"; 
-        }
-        else{
-            successMessage();
-        }
+    // console.log("inside");
+    // if(Name.value.trim()==='' && Profession.value.trim()==='' && Age.value==='')
+    //     {
+    //         console.log("1");
+    //       errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
+    //       errorMessage.style.color="red";
+    //     }
+    //     else if(Name.value.trim()==='' && Profession.value.trim()!=='' && Age.value!==''){
+    //         console.log("2");
+    //         errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
+    //         errorMessage.style.color="red";
+    //     }
+    //     else if(Name.value.trim()!=='' && Profession.value.trim()==='' && Age.value!=='')
+    //     {
+    //         console.log("3");
+    //         errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
+    //         errorMessage.style.color="red";
+    //     }
+    //     else if(Name.value.trim()!=='' && Profession.value.trim()!=='' && Age.value==='')
+    //     {
+    //         console.log("4");
+    //         errorMessage.textContent="Error : Please Make sure All the fields are filled before adding an Employee!";
+    //         errorMessage.style.color="red"; 
+    //     }
+    //     else{
+    //         console.log("5");
+    //         successMessage();
+    //     }
+    if (!Name.value.trim() || !Profession.value.trim() || !Age.value) {
+        console.log("Error in input fields");
+        errorMessage.textContent = "Error: Please make sure all the fields are filled before adding an Employee!";
+        errorMessage.style.color = "red";
+    } else {
+        console.log("All fields filled");
+        successMessage();
+    }
+    
 }
 
 
